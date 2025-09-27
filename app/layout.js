@@ -4,6 +4,7 @@ import Sidebar from "@/components/Sidebar";
 import TabProvider from "@/context/TabContext";
 import { ThemeProvider } from "@/components/Themeprovider";
 import FloatingActionMenu from "@/components/ui/floating-action-menu";
+import MagicNavigation from "@/components/MobileNavbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,7 +42,8 @@ export default function RootLayout({ children }) {
           <TabProvider>
             {children}
             <Sidebar />
-            <FloatingActionMenu className="fixed top-4  right-10" />
+            <MagicNavigation />
+            <FloatingActionMenu className="fixed top-4 right-4 md:right-10" />
           </TabProvider>
         </ThemeProvider>
       </body>

@@ -1,4 +1,5 @@
 "use client";
+import MagicNavigation from "@/components/MobileNavbar";
 import About from "@/components/pages/About";
 import Home from "@/components/pages/Home";
 import Work from "@/components/pages/Work";
@@ -10,8 +11,8 @@ export default function Page() {
     { tab: <Home /> },
     { tab: <About /> },
     { tab: <Work /> },
-    { tab: <h1>Contact</h1> },
-    { tab: <h1>Blog</h1> },
+    { tab: <div className=" flex justify-center items-center h-dvh">Comming Soon...</div> },
+    { tab: <div className=" flex justify-center items-center h-dvh">Comming Soon...</div> },
   ];
   const { activeTab } = useTabContext();
   return <Fragment key={activeTab}>{Tabs[activeTab].tab}</Fragment>;

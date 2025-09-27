@@ -1,13 +1,14 @@
 import Image from "next/image";
+import me from '@/assets/image.png'
 
 export default function Home() {
   return (
     <section className="h-dvh relative flex justify-center transform-none items-center overflow-hidden ">
-      <div className="w-[calc(100vw-70vw)] fixed -left-[10vw] -top-5 h-[150vh] bg-[#ffb400] -rotate-[15deg]" />
-      <div className=" fixed h-[calc(100vh-5vh)]  border rounded-2xl overflow-hidden w-[35vw] left-10">
-        <Image src="/logo.png" alt="" width={200} height={200} />
+      <div className="w-[calc(100vw-70vw)] hidden md:block fixed -left-[10vw] -top-5 h-[150vh] bg-[#ffb400] -rotate-[15deg]" />
+      <div className=" hidden md:block fixed rounded-2xl overflow-hidden w-[35vw] left-20">
+        <Image src={me} alt="" width={590} height={1050} draggable={false} className=" w-[35vw] " />
       </div>
-      <div className="flex flex-col justify-center items-start gap-3 ml-[33%] max-w-[40vw] ">
+      <div className="flex flex-col justify-center items-start gap-3 ml-0 md:ml-[33%] max-w-[90dvw] z-10 md:max-w-[40vw] ">
         <h2 className=" text-lg">Hi There!</h2>
         <h1 className="text-3xl font-bold">
           I'm <span className="text-[#ffb400]">Sujal Tyagi</span>

@@ -2,7 +2,7 @@
 import { createContext, useContext, useState } from "react";
 export const TabContext = createContext();
 export default function TabProvider({ children }) {
-  const [activeTab, setActiveTab] = useState(1);
+  const [activeTab, setActiveTab] = useState(0);
   return (
     <TabContext.Provider value={{ activeTab, setActiveTab }}>
       {children}

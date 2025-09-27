@@ -34,7 +34,7 @@ export default function Sidebar() {
   const { activeTab, setActiveTab } = useTabContext();
   const [hover, setHover] = useState(undefined);
   return (
-    <div className="fixed top-1/2 transform -translate-y-1/2 right-10 flex justify-end items-center my-auto h-fit bg-transparent w-[10vw] ">
+    <div className="fixed top-1/2 transform -translate-y-1/2 right-10 hidden md:flex justify-end items-center my-auto h-fit bg-transparent w-[10vw] ">
       <ol className=" flex flex-col gap-[4vh] justify-end items-end  ">
         {data.map((item, index) => {
           return (

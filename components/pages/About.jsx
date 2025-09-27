@@ -26,8 +26,8 @@ function PersonalInfo() {
   };
   return (
     <>
-      <div className=" flex w-full justify-around">
-        <ul className=" flex flex-col  gap-6 ">
+      <div className=" flex flex-col md:flex-row text-[0.9rem] gap-3 md:text-[1rem] w-full md:items-start md:justify-around">
+        <ul className=" flex flex-col gap-3 md:gap-6 px-[20vw] md:px-0 ">
           <li>
             <strong>Name:</strong> {userInfo.firstName} {userInfo.lastName}
           </li>
@@ -44,15 +44,15 @@ function PersonalInfo() {
             <strong>Address:</strong> {userInfo.address}
           </li>
         </ul>
-        <ul className=" flex flex-col gap-6">
+        <ul className=" flex flex-col gap-3 md:gap-6 px-[20vw] md:px-0  ">
           <li>
             <strong>Phone:</strong> {userInfo.phone}
           </li>
-          <li>
+          <li className=" text-nowrap">
             <strong>Email:</strong>{" "}
             <a href={`mailto:${userInfo.email}`}>{userInfo.email}</a>
           </li>
-          <li>
+          <li className=" text-nowrap">
             <strong>LinkedIn:</strong> {userInfo.LinkedIn}
           </li>
           <li>
@@ -67,9 +67,9 @@ function PersonalInfo() {
 function SkillCard() {
   const { theme } = useTheme();
   return (
-    <div className="flex gap-2  ">
+    <div className="flex gap-2 ">
       <div className=" flex flex-col items-end gap-2 ">
-        <div className=" border inset-shadow-sm inset-shadow-orange-700 rounded-md w-[7vw] h-[15vh]">
+        <div className=" border inset-shadow-sm inset-shadow-orange-700 rounded-md w-[30vw] h-[15vh] md:w-[7vw] md:h-[15vh]">
           <Image
             src={Html}
             alt=""
@@ -78,7 +78,7 @@ function SkillCard() {
             className="w-full h-full object-contain  "
           />
         </div>
-        <div className=" border inset-shadow-sm dark:inset-shadow-white inset-shadow-black  rounded-md w-[9vw] h-[12vh]">
+        <div className=" border inset-shadow-sm dark:inset-shadow-white inset-shadow-black rounded-md w-[40vw] h-[15vh] md:w-[9vw] md:h-[12vh]">
           {theme === "dark" || theme === "system" ? (
             <Image
               src={NextJsWhite}
@@ -100,7 +100,7 @@ function SkillCard() {
       </div>
       <div className=" flex flex-col gap-2 ">
         <div className="">
-          <div className=" inset-shadow-sm inset-shadow-[#00bcff] border rounded-md w-[9vw] h-[12vh]">
+          <div className=" inset-shadow-sm inset-shadow-[#00bcff] border rounded-md w-[45vw] h-[15vh] md:w-[9vw] md:h-[12vh]">
             {theme === "dark" || theme === "system" ? (
               <Image
                 src={TailwindcssWhite}
@@ -121,7 +121,7 @@ function SkillCard() {
           </div>
         </div>
         <div className=" flex gap-2">
-          <div className=" border inset-shadow-sm inset-shadow-[#f41752] rounded-md w-[8vw] h-[15vh]">
+          <div className=" border inset-shadow-sm inset-shadow-[#f41752] rounded-md w-[25vw] h-[15vh] md:w-[8vw] md:h-[15vh]">
             <Image
               src={Angular}
               alt=""
@@ -130,7 +130,7 @@ function SkillCard() {
               className="w-full h-full object-contain object-center  "
             />
           </div>
-          <div className=" border rounded-md inset-shadow-sm inset-shadow-[#67bb4a] w-[6vw] h-[10vh]">
+          <div className=" border rounded-md inset-shadow-sm inset-shadow-[#67bb4a] w-[20vw] h-[12vh] md:w-[6vw] md:h-[10vh]">
             <Image
               src={NodeJS}
               alt=""
@@ -161,18 +161,18 @@ function ResumeBtn() {
 export default function About() {
   return (
     <section className=" mx-auto container flex flex-col justify-center items-center">
-      <header className="relative py-[15vh] ">
-        <p className="text-[3rem] tracking-widest font-extrabold uppercase">
+      <header className="relative py-[8vh] md:py-[15vh] ">
+        <p className=" text-[2rem] md:text-[3rem] tracking-widest font-extrabold uppercase">
           About
           <span className=" text-[#ffb400]">Me</span>
         </p>
-        <h1 className=" absolute top-1/2 left-1/2 text-[6.5rem] opacity-20 font-extrabold tracking-widest uppercase  -translate-1/2 ">
+        <h1 className=" absolute top-1/2 left-1/2 text-[3.5rem] md:text-[6.5rem] opacity-20 font-extrabold tracking-widest uppercase  -translate-1/2 ">
           Resume
         </h1>
       </header>
-      <main className=" grid grid-cols-2 h-fit w-full ">
-        <div className=" w-full flex flex-col items-center  ">
-          <h3 className=" text-[1.5rem] font-bold mb-[4vh]">
+      <main className=" grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0 h-fit w-full">
+        <div className=" w-full flex flex-col  items-center ">
+          <h3 className=" text-[1.2rem] md:text-[1.5rem] font-bold mb-[2vh] md:mb-[4vh]">
             Personal Details
           </h3>
           <PersonalInfo />
