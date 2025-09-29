@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Lightbulb, Moon, MonitorSmartphone } from "lucide-react";
@@ -53,10 +53,18 @@ function OptionsBtn({ toggleMenu }) {
 
 const FloatingActionMenu = ({ className }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { theme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-  const { theme } = useTheme();
+
+  if (!mounted) return null;
   return (
     <div className={cn("fixed bottom-8 right-8 h-fit ", className)}>
       <Button
@@ -73,11 +81,12 @@ const FloatingActionMenu = ({ className }) => {
             damping: 20,
           }}
         >
-          {theme === "system" && <MonitorSmartphone className="w-4 h-4" />}
-          {theme === "light" && <Lightbulb className="w-4 h-4" />}
-          {theme === "dark" && <Moon className="w-4 h-4" />}
+          {theme === "system" && <MonitorSmartphone width={18} height={18} />}
+          {theme === "light" && <Lightbulb width={18} height={18} />}
+          {theme === "dark" && <Moon width={24} height={24} />}
         </motion.div>
       </Button>
+
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -93,7 +102,7 @@ const FloatingActionMenu = ({ className }) => {
             }}
             className="absolute top-14 right-0 mb-2"
           >
-            <OptionsBtn toggleMenu={toggleMenu} />
+            <OptionsBtn toggleMenu={setIsOpen} />
           </motion.div>
         )}
       </AnimatePresence>

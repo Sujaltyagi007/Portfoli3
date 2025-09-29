@@ -10,6 +10,7 @@ import NodeJS from "@/assets/Nodejs.png";
 import Angular from "@/assets/AngularJs.png";
 import { useTheme } from "next-themes";
 import { FaDownload } from "react-icons/fa";
+import Link from "next/link";
 
 function PersonalInfo() {
   const userInfo = {
@@ -148,9 +149,9 @@ function SkillCard() {
 function ResumeBtn() {
   return (
     <div className=" border w-fit cursor-pointer group flex items-center gap-2 my-[4vh] mx-[4vw] bg-[#ffb400] py-3 px-8 rounded-full ">
-      <p className=" translate-x-4 group-hover:translate-x-0 transform transition-all duration-300 ease-in-out ">
+      <Link href={"./Resume.pdf"} filename={"Resume.pdf"} className=" select-none translate-x-4 group-hover:translate-x-0 transform transition-all duration-300 ease-in-out ">
         Download CV
-      </p>
+      </Link>
       <span className="opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:visible invisible transition-all duration-300 ease-in-out pointer-events-none group-hover:pointer-events-auto">
         <FaDownload />
       </span>
@@ -160,7 +161,7 @@ function ResumeBtn() {
 
 export default function About() {
   return (
-    <section className=" mx-auto container flex flex-col justify-center items-center">
+    <section className=" min-h-screen mx-auto container flex flex-col justify-center items-center">
       <header className="relative py-[8vh] md:py-[15vh] ">
         <p className=" text-[2rem] md:text-[3rem] tracking-widest font-extrabold uppercase">
           About

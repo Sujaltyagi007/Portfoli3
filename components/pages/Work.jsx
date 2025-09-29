@@ -1,8 +1,16 @@
 "use client";
 import { cn } from "@/lib/utils";
 import Lenis from "lenis";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { ZoomParallax } from "../zoom-parallax";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import SplitText from "gsap/SplitText";
+
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(SplitText);
 
 export default function Work() {
   useEffect(() => {
@@ -44,9 +52,50 @@ export default function Work() {
       alt: "Forest trees and sunlight",
     },
   ];
+  const text = useRef(null);
+  const Box = useRef(null);
+  const Hand = useRef(null);
+
+  useGSAP(
+    () => {
+      gsap.to(text.current, {
+        z: -1000,
+        fontSize: "3vw",
+        lineHeight: "45px",
+        scrollTrigger: {
+          trigger: text.current,
+          start: "top 70%",
+          end: "+=400",
+          scrub: true,
+        },
+      });
+    },
+    { scope: Box }
+  );
 
   return (
-    <main className="min-h-screen w-full">
+    <main className="min-h-screen w-full overflow-hidden md:overflow-visible ">
+      <div className="min-h-[calc(100vh-7vh)] flex  justify-center items-center ">
+        <p
+          ref={Hand}
+          className=" w-[80vw] md:w-[60vw] text-center text-[1.2rem] md:text-[2.5rem] font-[600] "
+        >
+          <span>👋</span> Hi, I'm a Frontend Developer based in Delhi, India. I
+          specialize in building beautiful, interactive,{" "}
+          <span className="bg-[#ffb400] text-nowrap rounded-2xl px-2 ">and user-focused interfaces.</span> What excites me most is
+          creating seamless, impactful experiences that users can connect with
+          and enjoy.
+        </p>
+      </div>
+      <div ref={Box} className=" flex items-center justify-center h-fit">
+        <h1
+          ref={text}
+          className=" text-[18vw] perspective-distant transform-3d text-nowrap uppercase text-center flex flex-col h-dvh justify-center font-bold "
+        >
+          What I've been
+          <span className=" text-[#ffb400] text-nowrap ">Working On</span>
+        </h1>
+      </div>
       <ZoomParallax images={images} />
       <div className="h-[50vh]" />
     </main>

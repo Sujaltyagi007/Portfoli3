@@ -57,14 +57,14 @@ export default function MagicNavigation() {
           ))}
 
           <div
-            className="absolute -top-[calc(5vh)] size-[65px] bg-gradient-to-tr from-[#FFB400] to-[#ffcf60] border-[6px] border-[#ffffff] dark:border-[#000000] rounded-full flex justify-center items-center transition-transform duration-500"
+            className="absolute -top-[calc(4.5vh)] size-[65px] bg-gradient-to-tr from-[#FFB400] to-[#ffcf60] border-[6px] border-[#ffffff] dark:border-[#000000] rounded-full flex justify-center items-center transition-transform duration-500"
             style={{
               transform: `translateX(calc(57.5px * ${activeTab}))`,
               left: `calc(47% - (140px))`,
             }}
           >
-            <div className="absolute top-[58%] left-[-14px] w-3 h-3 bg-transparent rounded-tr-2xl dark:shadow-[1px_-10px_0_#000000] shadow-[1px_-6px_0_#ffffff]  "></div>
-            <div className="absolute top-[58%] right-[-14px] w-3 h-3 bg-transparent rounded-tl-2xl dark:shadow-[-0.5px_-10px_0_#000000] shadow-[0px_-6px_0_#ffffff]"></div>
+            <div className="absolute top-[54.2%] left-[-16px] w-3 h-3 bg-transparent rounded-tr-2xl dark:shadow-[1px_-10px_0_#000000] shadow-[1px_-6px_0_#ffffff]"></div>
+            <div className="absolute top-[54.2%] right-[-16px] w-3 h-3 bg-transparent rounded-tl-2xl dark:shadow-[-0.5px_-10px_0_#000000] shadow-[0px_-6px_0_#ffffff]"></div>
           </div>
         </ul>
       </div>

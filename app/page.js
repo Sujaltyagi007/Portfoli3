@@ -1,6 +1,7 @@
 "use client";
 import MagicNavigation from "@/components/MobileNavbar";
 import About from "@/components/pages/About";
+import Contact from "@/components/pages/Contact";
 import Home from "@/components/pages/Home";
 import Work from "@/components/pages/Work";
 import { useTabContext } from "@/context/TabContext";
@@ -11,7 +12,7 @@ export default function Page() {
     { tab: <Home /> },
     { tab: <About /> },
     { tab: <Work /> },
-    { tab: <div className=" flex justify-center items-center h-dvh">Comming Soon...</div> },
+    { tab: <Contact /> },
     { tab: <div className=" flex justify-center items-center h-dvh">Comming Soon...</div> },
   ];
   const { activeTab } = useTabContext();
